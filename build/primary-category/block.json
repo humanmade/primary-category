@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "hm/primary-category",
+  "title": "Primary category",
+  "category": "theme",
+  "icon": "category",
+  "description": "Displays the primary category for a post.",
+  "version": "1.0.0",
+  "textdomain": "hm-primary-category",
+  "usesContext": [
+    "postId"
+  ],
+  "attributes": {
+    "postId": {
+      "type": "number"
+    }
+  },
+  "editorScript": "file:./editor.js",
+  "render": "file:./render.php"
+}
