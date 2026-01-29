@@ -1,0 +1,15 @@
+{
+  "name": "humanmade/hm-primary-category-block",
+  "description": "Displays the primary category for a post.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Human Made Limited",
+      "email": "hello@humanmade.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  }
+}
