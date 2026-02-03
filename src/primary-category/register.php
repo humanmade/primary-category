@@ -12,25 +12,7 @@ function register_block() {
 	register_block_type( $block_path );
 }
 
-const CATEGORY_OVERRIDE_META_KEY = '_category_override';
-const CATEGORY_SHORTNAME_META_KEY = 'short_name';
-
 function add_primary_category_meta_fields() {
-	register_post_meta(
-		'post',
-		CATEGORY_OVERRIDE_META_KEY,
-		[
-			'description' => __( 'Customized title to use for displaying the post primary category', 'hm-primary-category' ),
-			'single' => true,
-			'type' => 'string',
-			'show_in_rest' => true,
-			'sanitize_callback' => 'sanitize_text_field',
-			'auth_callback' => function() {
-				return current_user_can( 'edit_posts' );
-			},
-		]
-	);
-
 	if ( function_exists( 'yoast_get_primary_term_id' ) ) {
 		// Re-register the Yoast "primary_category" meta field for use in REST.
 		register_post_meta(
@@ -47,33 +29,6 @@ function add_primary_category_meta_fields() {
 			]
 		);
 	}
-
-	register_term_meta(
-		'category',
-		'short_name',
-		[
-			'description' => __( 'Short name of category, used in some article header layouts', 'hm-primary-category' ),
-			'single' => true,
-			'type' => 'string',
-			'show_in_rest' => true,
-			'sanitize_callback' => 'sanitize_text_field',
-			'auth_callback' => function() {
-				return current_user_can( 'edit_categories' );
-			},
-		]
-	);
-}
-
-function get_short_name( $category ) : string {
-	if ( is_int( $category ) ) {
-		$category = get_category( $category );
-	}
-
-	if ( is_wp_error( $category ) || ! $category ) {
-		return null;
-	}
-
-	return get_term_meta( $category->term_id, CATEGORY_SHORTNAME_META_KEY, true ) ?: $category->name;
 }
 
 function get_primary_category_parent( $term ) {
@@ -116,16 +71,14 @@ function get_primary_category( $post_id ) {
 
 function primary_category( $post_id, $classname ) {
 	$primary_category = get_primary_category( $post_id );
-	$category_text_override = get_post_meta( $post_id, CATEGORY_OVERRIDE_META_KEY, true );
 
 	if ( is_a( $primary_category, 'WP_Term' ) ) {
-		$category_text = $category_text_override ?: $primary_category->name;
 		?>
 		<a
 			class="<?php echo esc_attr( $classname ); ?>"
 			href="<?php echo esc_url( get_category_link( $primary_category ) ); ?>"
 		>
-			<?php echo esc_html( $category_text ); ?>
+			<?php echo esc_html( $primary_category->name ); ?>
 		</a>
 		<?php
 	}
