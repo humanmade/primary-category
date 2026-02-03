@@ -32,6 +32,7 @@ function add_primary_category_meta_fields() {
 	);
 
 	if ( function_exists( 'yoast_get_primary_term_id' ) ) {
+		// Re-register the Yoast "primary_category" meta field for use in REST.
 		register_post_meta(
 			'post',
 			'_yoast_wpseo_primary_category',
