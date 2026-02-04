@@ -1,4 +1,5 @@
 node_modules/
+build/
 blocks/build/
 vendor/
 .DS_Store
