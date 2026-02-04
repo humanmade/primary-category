@@ -60,8 +60,8 @@ To customize the category display text for a specific post, use the `_category_o
 ## Requirements
 
 - WordPress 6.0+
-- PHP 7.4+
-- Node.js 14+
+- PHP 8.2+
+- Node.js 22+
 
 ## License
 
