@@ -7,6 +7,8 @@
  * Author URI:        https://humanmade.com/
  * License:           GPL-2.0+
  * Text Domain:       hm-primary-category
+ *
+ * @package HM_Primary_Category_Block
  */
 
 namespace HM_Primary_Category_Block;

@@ -1,5 +1,11 @@
 <?php
 /**
+ * Primary Category Block - Render Template.
+ *
+ * Displays the primary category link for a post.
+ *
+ * @package HM_Primary_Category_Block
+ *
  * @var array    $attributes Block attributes.
  * @var string   $content    Block content.
  * @var WP_Block $block      Block instance.

@@ -1,3 +1,16 @@
+/**
+ * Edit component for the Primary Category block.
+ *
+ * Handles the block editor interface, synchronizing the postId from context
+ * and rendering a server-side preview of the primary category.
+ *
+ * @param {Object} props              Component props.
+ * @param {Object} props.attributes   Block attributes.
+ * @param {Object} props.context      Block context.
+ * @param {Function} props.setAttributes Function to update block attributes.
+ * @return {Element} The edit component.
+ */
+
 import { useBlockProps } from '@wordpress/block-editor';
 import { Disabled, Placeholder } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
