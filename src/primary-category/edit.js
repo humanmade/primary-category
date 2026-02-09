@@ -1,3 +1,9 @@
+import { useBlockProps } from '@wordpress/block-editor';
+import { Disabled, Placeholder } from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
+import { useSelect } from '@wordpress/data';
+import ServerSideRender from '@wordpress/server-side-render';
+
 /**
  * Edit component for the Primary Category block.
  *
@@ -10,13 +16,6 @@
  * @param {Function} props.setAttributes Function to update block attributes.
  * @return {Element} The edit component.
  */
-
-import { useBlockProps } from '@wordpress/block-editor';
-import { Disabled, Placeholder } from '@wordpress/components';
-import { useEffect } from '@wordpress/element';
-import { useSelect } from '@wordpress/data';
-import ServerSideRender from '@wordpress/server-side-render';
-
 function Edit( props ) {
 	const { attributes, context, setAttributes } = props;
 	const { postId } = attributes;
