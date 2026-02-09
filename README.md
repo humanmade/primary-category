@@ -6,8 +6,6 @@ Displays the primary category for a post in the WordPress block editor.
 
 - Displays the primary category for a post
 - Supports Yoast SEO primary category selection
-- Allows category text override via post meta
-- Supports category short names
 - Server-side rendered for optimal performance
 
 ## Usage
