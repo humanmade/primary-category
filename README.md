@@ -38,10 +38,6 @@ The block outputs a link with the class `hentry__category` which can be styled v
 }
 ```
 
-### Category Override
-
-To customize the category display text for a specific post, use the `_category_override` custom field.
-
 ## Installation
 
 1. Clone this repository to your WordPress plugins directory
