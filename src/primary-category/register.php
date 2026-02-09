@@ -100,7 +100,7 @@ function get_primary_category( $post_id ) {
 		return null;
 	}
 
-	if ( 1 === count( $categories ) || 'submissions' === $post->post_type ) {
+	if ( 1 === count( $categories ) ) {
 		return reset( $categories );
 	}
 
