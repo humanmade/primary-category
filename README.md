@@ -22,7 +22,6 @@ The Primary Category block is automatically available after plugin activation. T
 2. If Yoast SEO is active, it uses the primary category set by Yoast
 3. For posts with multiple categories, it returns the top-level parent category
 4. For single category posts, it returns that category
-5. The category text can be customized via the `_category_override` post meta field
 
 ### Block Name
 
