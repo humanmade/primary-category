@@ -52,7 +52,7 @@ function Edit( props ) {
 		<div { ...blockProps }>
 			<Disabled>
 				<ServerSideRender
-					attributes={ attributes }
+					attributes={ { ...attributes, isEditor: true } }
 					block="hm/primary-category"
 				/>
 			</Disabled>

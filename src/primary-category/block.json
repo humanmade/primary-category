@@ -12,6 +12,10 @@
   "attributes": {
     "postId": {
       "type": "number"
+    },
+    "isEditor": {
+      "type": "boolean",
+      "default": false
     }
   },
   "editorScript": "file:./editor.js",
