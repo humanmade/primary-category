@@ -1,5 +1,6 @@
+node_modules/
 build/
-
-
-/vendor/
-/node_modules/
+blocks/build/
+vendor/
+.DS_Store
+*.log

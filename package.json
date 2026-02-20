@@ -1,0 +1,33 @@
+{
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/humanmade/hm-primary-category-block/issues"
+  },
+  "description": "Displays the primary category for a post.",
+  "devDependencies": {
+    "@wordpress/scripts": "^26.15.0"
+  },
+  "homepage": "https://github.com/humanmade/hm-primary-category-block#readme",
+  "license": "GPL-2.0-or-later",
+  "name": "hm-primary-category-block",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humanmade/hm-primary-category-block.git"
+  },
+  "scripts": {
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format ./src",
+    "format:configs": "wp-scripts format ./*.js",
+    "lint": "npm run lint:css; npm run lint:js",
+    "lint:css": "wp-scripts lint-style ./src/**/*.{css,scss}",
+    "lint:js": "wp-scripts lint-js ./src/**/*.js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "start": "wp-scripts start",
+    "release": "git fetch && git checkout dist && git reset origin/main --hard && npm run build && git add -f build && git commit -m 'Update build' && git push -f origin dist && git checkout -"
+  },
+  "version": "1.0.0"
+}
