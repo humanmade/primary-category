@@ -81,7 +81,7 @@ To tag a new release,
 
 ![Screenshot of Run workflow dropdown form being filled out](./.github/docs/release-tagging-action.jpg)
 
-Once the workflow completes, your new version should be [tagged](https://github.com/humanmade/modal-block/tags) and available in the list of [releases](https://github.com/humanmade/modal-block/releases)
+Once the workflow completes, your new version should be [tagged](https://github.com/humanmade/primary-category/tags) and available in the list of [releases](https://github.com/humanmade/primary-category/releases)
 
 ## License
 
