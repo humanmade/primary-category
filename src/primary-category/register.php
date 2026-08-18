@@ -114,17 +114,18 @@ function get_primary_category( $post_id ) {
  *
  * Renders an anchor tag with the primary category name and link.
  *
- * @param int    $post_id   The post ID.
- * @param string $classname CSS class name for the anchor element.
+ * @param int    $post_id           The post ID.
+ * @param string $wrapper_attributes Pre-escaped HTML attributes for the anchor
+ *                                   element, as returned by get_block_wrapper_attributes().
  * @return void
  */
-function primary_category( $post_id, $classname ) {
+function primary_category( $post_id, $wrapper_attributes ) {
 	$primary_category = get_primary_category( $post_id );
 
 	if ( is_a( $primary_category, 'WP_Term' ) ) {
 		?>
 		<a
-			class="<?php echo esc_attr( $classname ); ?>"
+			<?php echo $wrapper_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped by get_block_wrapper_attributes(). ?>
 			href="<?php echo esc_url( get_category_link( $primary_category ) ); ?>"
 		>
 			<?php echo esc_html( $primary_category->name ); ?>
