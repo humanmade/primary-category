@@ -29,5 +29,5 @@
     "start": "wp-scripts start",
     "release": "git fetch && git checkout dist && git reset origin/main --hard && npm run build && git add -f build && git commit -m 'Update build' && git push -f origin dist && git checkout -"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
