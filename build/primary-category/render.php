@@ -34,4 +34,4 @@ if ( ! is_a( $primary_category, 'WP_Term' ) ) {
 	return;
 }
 
-primary_category( $post_id, 'hentry__category' );
+primary_category( $post_id, get_block_wrapper_attributes( [ 'class' => 'hentry__category' ] ) );
