@@ -1,39 +1,23 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import { Disabled, Placeholder } from '@wordpress/components';
-import { useEffect } from '@wordpress/element';
-import { useSelect } from '@wordpress/data';
 import ServerSideRender from '@wordpress/server-side-render';
 
 /**
  * Edit component for the Primary Category block.
  *
- * Handles the block editor interface, synchronizing the postId from context
- * and rendering a server-side preview of the primary category.
+ * Previews the primary category of the post from context (each post in a
+ * Query Loop, or the post being edited), else the block's `postId` attribute.
+ * The preview request passes that post as `post_id`, because the server reads
+ * the post from the request. The wrapper already carries the block's classes
+ * and supports, so the preview skips them.
  *
- * @param {Object} props              Component props.
- * @param {Object} props.attributes   Block attributes.
- * @param {Object} props.context      Block context.
- * @param {Function} props.setAttributes Function to update block attributes.
+ * @param {Object} props            Component props.
+ * @param {Object} props.attributes Block attributes.
+ * @param {Object} props.context    Block context.
  * @return {Element} The edit component.
  */
-function Edit( props ) {
-	const { attributes, context, setAttributes } = props;
-	const { postId } = attributes;
-
-	const currentPostId = useSelect( ( select ) => {
-		return select( 'core/editor' )?.getCurrentPostId();
-	}, [] );
-
-	useEffect( () => {
-		const contextPostId = context?.postId;
-		const effectivePostId = contextPostId || currentPostId;
-		
-		if ( effectivePostId && effectivePostId !== postId ) {
-			setAttributes( {
-				postId: effectivePostId,
-			} );
-		}
-	}, [ context, currentPostId, postId, setAttributes ] );
+function Edit( { attributes, context } ) {
+	const postId = context.postId || attributes.postId;
 
 	const blockProps = useBlockProps();
 
@@ -54,6 +38,8 @@ function Edit( props ) {
 				<ServerSideRender
 					attributes={ { ...attributes, isEditor: true } }
 					block="hm/primary-category"
+					skipBlockSupportAttributes
+					urlQueryArgs={ { post_id: postId } }
 				/>
 			</Disabled>
 		</div>

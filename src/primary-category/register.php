@@ -92,8 +92,7 @@ function get_primary_category( $post_id ) {
 		: 0;
 
 	if ( $yoast_primary_id ) {
-		$yoast_primary = get_category( $yoast_primary_id );
-		return get_primary_category_parent( $yoast_primary );
+		return get_category( $yoast_primary_id );
 	}
 
 	if ( empty( $categories ) ) {
