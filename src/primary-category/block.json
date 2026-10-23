@@ -9,6 +9,11 @@
   "version": "1.0.0",
   "textdomain": "hm-primary-category",
   "usesContext": [ "postId" ],
+  "supports": {
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
   "attributes": {
     "postId": {
       "type": "number"

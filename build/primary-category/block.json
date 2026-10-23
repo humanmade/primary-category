@@ -11,6 +11,11 @@
   "usesContext": [
     "postId"
   ],
+  "supports": {
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
   "attributes": {
     "postId": {
       "type": "number"
